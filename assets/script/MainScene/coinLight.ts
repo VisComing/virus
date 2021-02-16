@@ -33,24 +33,36 @@ export default class NewClass extends cc.Component {
         if(this.progressBar.progress >= 1) {
             //增加金币数，注意字符串与数字间的转换
             this.progressBar.progress = 0
-            let str : string = this.coinNumber.string
-            let number : number = 0
-            if(str.charAt(str.length - 1) === 'k') {
-                number = Number(str.slice(0, -1))
-                number *= 1000
+            let lingqujinbi = this.node.parent.parent.getComponent('lingqujinbi')
+            if(!lingqujinbi) {
+                cc.error('coinLight.ts, null component')
+            }
+            lingqujinbi.coinCnt += 120
+            let number : number = lingqujinbi.coinCnt
+            if(number >= 1000) {
+                this.coinNumber.string = String((number / 1000).toFixed(2)) + 'k'
             }
             else {
-                number = Number(str)
-            }
-            number += 120
-            cc.log(number)
-            if(number < 1000) {
                 this.coinNumber.string = String(number)
             }
-            else {
-                number = number / 1000
-                this.coinNumber.string = String(number) + 'k'
-            }
+
+            
+            // if(str.charAt(str.length - 1) === 'k') {
+            //     number = Number(str.slice(0, -1))
+            //     number *= 1000
+            // }
+            // else {
+            //     number = Number(str)
+            // }
+            // number += 120
+            // cc.log(number)
+            // if(number < 1000) {
+            //     this.coinNumber.string = String(number)
+            // }
+            // else {
+            //     number = number / 1000
+            //     this.coinNumber.string = String(number.toFixed(2)) + 'k'
+            // }
         }
     }
 }
