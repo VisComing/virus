@@ -1,0 +1,73 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "AirPlaneFlame",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 9,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "3c27b6ca-c541-4ea9-b44f-7ca9a29b128e"
+            }
+          },
+          {
+            "frame": 0.1111111111111111,
+            "value": {
+              "__uuid__": "f633d97a-146c-4684-bddd-af4ca6598f71"
+            }
+          },
+          {
+            "frame": 0.2222222222222222,
+            "value": {
+              "__uuid__": "544f4820-96da-4b9b-a690-cf029c4c6f37"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "1c903e5c-d133-4c31-8f5b-c19c51e317d6"
+            }
+          },
+          {
+            "frame": 0.4444444444444444,
+            "value": {
+              "__uuid__": "c67e31c5-22eb-42b5-9ddb-2f089cc29dc9"
+            }
+          },
+          {
+            "frame": 0.5555555555555556,
+            "value": {
+              "__uuid__": "f16df62b-df77-4c09-a6fa-0f3cc557cae4"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "9cec7348-7f2a-4580-a277-4fb8467af3f1"
+            }
+          },
+          {
+            "frame": 0.7777777777777778,
+            "value": {
+              "__uuid__": "3c27b6ca-c541-4ea9-b44f-7ca9a29b128e"
+            }
+          },
+          {
+            "frame": 0.8888888888888888,
+            "value": {
+              "__uuid__": "d31c4d4d-7f13-4525-8225-251007ef99d7"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
