@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "jinbi",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.75,
+  "sample": 8,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "61ed7575-fda6-4822-bdd3-f5bbe4b8ab39"
+            }
+          },
+          {
+            "frame": 0.125,
+            "value": {
+              "__uuid__": "5d1c6666-7da8-48c2-aff1-70db34672762"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "71711a8c-8e76-4868-abac-060a9daadf9f"
+            }
+          },
+          {
+            "frame": 0.375,
+            "value": {
+              "__uuid__": "b112da86-8f23-47b2-831e-9ff5b657c40f"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "cf5fb2f3-b284-4fff-824c-4813002d7b35"
+            }
+          },
+          {
+            "frame": 0.625,
+            "value": {
+              "__uuid__": "0d15ef39-e130-4903-8c52-ccc1709f539f"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

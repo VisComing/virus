@@ -28,8 +28,12 @@ export default class NewClass extends cc.Component {
         let node1 : cc.Node = this.node.getChildByName('1')
         let node2 : cc.Node = this.node.getChildByName('2')
         if(node1 && node2) {
+            node1.active = true
+            node2.active = true
             node1.stopAllActions()
             node2.stopAllActions()
+            node1.setPosition(392.855, 792.602)
+            node2.setPosition(411.234, 528.401)
             node1.runAction(cc.repeatForever(cc.sequence(cc.moveBy(0.3, cc.v2(40, -40)),
             cc.moveBy(0.3, cc.v2(-30, -30)),
             cc.moveBy(0.3, cc.v2(30, 30)),
@@ -45,12 +49,17 @@ export default class NewClass extends cc.Component {
     }
 
     moveIn () {
-        this.node.active = true
-        this.play()
+        //延迟一会再显示
+        this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(this.play, this)))
     }
 
     moveOut () {
-        this.node.active = false
+        let node1 : cc.Node = this.node.getChildByName('1')
+        let node2 : cc.Node = this.node.getChildByName('2')
+        if(node1 && node2) {
+            node1.active = false
+            node2.active = false
+        }
     }
     // update (dt) {}
 }
