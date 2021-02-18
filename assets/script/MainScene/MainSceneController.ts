@@ -22,8 +22,8 @@ export default class NewClass extends cc.Component {
     @property(cc.Node) 
     logo : cc.Node = null
 
-    @property(cc.Node) 
-    TwoCircleMove : cc.Node = null
+    // @property(cc.Node) 
+    // TwoCircleMove : cc.Node = null
 
     @property(cc.Node) 
     lingqujinbi : cc.Node = null
@@ -37,6 +37,8 @@ export default class NewClass extends cc.Component {
     @property(cc.Node) 
     bottom : cc.Node = null
 
+    @property(cc.Node) 
+    virusProgressBar = null
 
     scriptArray = Array()
     // LIFE-CYCLE CALLBACKS:
@@ -44,11 +46,12 @@ export default class NewClass extends cc.Component {
     onLoad () {
         this.scriptArray.push(this.topBar.getComponent('topBar'))
         this.scriptArray.push(this.logo.getComponent('logo'))
-        this.scriptArray.push(this.TwoCircleMove.getComponent('lvquanmove'))
+        //this.scriptArray.push(this.TwoCircleMove.getComponent('lvquanmove'))
         this.scriptArray.push(this.lingqujinbi.getComponent('lingqujinbi'))
         this.scriptArray.push(this.guanqia.getComponent('guanqia'))
         this.scriptArray.push(this.shejibingdu.getComponent('tip'))
         this.scriptArray.push(this.bottom.getComponent('bottom'))
+        this.scriptArray.push(this.virusProgressBar.getComponent('virusProgressBar'))
     }
 
     start () {

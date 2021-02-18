@@ -22,6 +22,8 @@ export default class NewClass extends cc.Component {
     plantStartPos : cc.Vec2 = null
     // LIFE-CYCLE CALLBACKS:
 
+    firstTouchStart : boolean = true
+
     onLoad () {
         cc.director.getCollisionManager().enabled = true
     }
@@ -39,6 +41,10 @@ export default class NewClass extends cc.Component {
         else {
             controller.moveOut()
         }
+
+        //病毒进度条移入
+        cc.find('Canvas/virusSystem/virusProgressBar').getComponent('virusProgressBar').moveIn()
+
         //飞机缩小
         let plane : cc.Node = cc.find('Canvas/AirPlane')
         plane.runAction(cc.scaleTo(0.6, 0.8))
@@ -47,6 +53,7 @@ export default class NewClass extends cc.Component {
 
         this.node.on('touchmove', this.onTouchMove, this)
         this.node.on('touchend', this.onTouchEnd, this)
+        this.node.on('touchcancel', this.onTouchCancel, this)
     }
 
     onTouchStart (event : cc.Event.EventTouch) {
@@ -57,14 +64,11 @@ export default class NewClass extends cc.Component {
                 //开始游戏
                 this.isGameStart = true
                 this.gameStart()
-                this.touchStartPos = pos
             }
-        }
-        else {
-            //游戏已经开始了
-            this.touchStartPos = pos            
+            else return
         }
 
+        this.touchStartPos = pos      
         //显示枪口
         let fashekou = cc.find('Canvas/AirPlane/fashekou')
         if(!fashekou) {
@@ -72,7 +76,15 @@ export default class NewClass extends cc.Component {
         }
         else {
             let _fashekou = fashekou.getComponent('fashekou')
-            _fashekou.beginFire()
+            if(this.firstTouchStart){
+                this.node.runAction(cc.sequence(cc.delayTime(0.7), cc.callFunc(function(target, _fashekou) {
+                    _fashekou.beginFire()
+                }, this, _fashekou)))
+                this.firstTouchStart = false
+            }
+            else {
+                _fashekou.beginFire()
+            }
         }
         
         let plane : cc.Node = cc.find('Canvas/AirPlane')
@@ -113,6 +125,10 @@ export default class NewClass extends cc.Component {
 
         //变黑，病毒移速变慢
 
+    }
+
+    onTouchCancel () {
+        this.onTouchEnd()
     }
     // update (dt) {}
 }

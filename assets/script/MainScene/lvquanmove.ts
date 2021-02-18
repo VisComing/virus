@@ -50,7 +50,8 @@ export default class NewClass extends cc.Component {
 
     moveIn () {
         //延迟一会再显示
-        this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(this.play, this)))
+        this.node.active = true
+        this.play()
     }
 
     moveOut () {
