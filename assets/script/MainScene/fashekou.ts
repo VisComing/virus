@@ -29,14 +29,13 @@ export default class NewClass extends cc.Component {
     }
 
     fireCallBack () {
-        cc.log('fireCallBack')
-        let bullet = this.node.parent.parent.getComponent('Bullet')
-        bullet.onFire(this.node.convertToWorldSpaceAR(this.node.getPosition()), 6)
+        let bullet = this.node.parent.parent.getComponent('FireSystem')
+        bullet.onFire(this.node.convertToWorldSpaceAR(this.node.getPosition()), 10)
     }
 
     beginFire () {
         this.node.active = true
-        this.schedule(this.fireCallBack, 0.15)
+        this.schedule(this.fireCallBack, 0.05)
     }
 
     stopFire () {

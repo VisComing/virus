@@ -17,7 +17,7 @@
         "__id__": 2
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": null,
     "_opacity": 255,
@@ -6779,7 +6779,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Bullet",
+    "_name": "virusWall",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -6795,15 +6795,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 207,
+      "g": 72,
+      "b": 72,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
+      "width": 1223,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6814,8 +6814,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        0,
+        4.443,
+        1149.196,
         0,
         0,
         0,
@@ -6835,22 +6835,30 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": "c76ABay5lMk41uZro3GoOA"
+    "_groupIndex": 2,
+    "groupIndex": 2,
+    "_id": "8bHoGNMa1ARYEqgS1FiJhQ"
   },
   {
-    "__type__": "e75b1uCfC9JgLIKhMS5AQ91",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 146
     },
     "_enabled": true,
-    "label": null,
-    "text": "hello",
-    "Prefab": null,
-    "_id": "33osRAIPhAcpbaLOr+wHBQ"
+    "tag": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 1223,
+      "height": 20
+    },
+    "_id": "28puQhrbtPlqXj0CfwPyfz"
   },
   {
     "__type__": "cc.Canvas",
@@ -6966,42 +6974,9 @@
     "_enabled": true,
     "label": null,
     "text": "hello",
-    "Prefab": [
+    "bulletPrefab": [
       {
         "__uuid__": "7209f3e5-506c-4009-8d93-f10fa727a35b"
-      },
-      {
-        "__uuid__": "1147a2ee-303f-496b-914f-83665e540408"
-      },
-      {
-        "__uuid__": "44b252be-fbda-4612-89dc-a83ff3f1e1e5"
-      },
-      {
-        "__uuid__": "f314584a-ce56-496d-8574-6a4c63e94429"
-      },
-      {
-        "__uuid__": "61406762-101b-432a-9bdc-eec34f7a8822"
-      },
-      {
-        "__uuid__": "b017c0e8-6065-4e5a-9e0a-3390e7baef5f"
-      },
-      {
-        "__uuid__": "466db93f-6319-4532-9fa3-6d66076bcdf3"
-      },
-      {
-        "__uuid__": "9c8fa77e-b21d-4082-bbe3-ccb9efef9235"
-      },
-      {
-        "__uuid__": "983290bd-8b50-4fb2-8b18-e7c998d0253c"
-      },
-      {
-        "__uuid__": "92853e41-5d7e-48ea-ad43-cfcc7e8bcbf6"
-      },
-      {
-        "__uuid__": "c20c0565-0acb-40f3-9d2d-49740f06589d"
-      },
-      {
-        "__uuid__": "7d3c89af-82df-4aad-b568-8f233280d8f1"
       }
     ],
     "_id": "79yFqGvtpGHrfXCWsEaQBg"

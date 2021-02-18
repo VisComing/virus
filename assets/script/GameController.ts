@@ -22,7 +22,9 @@ export default class NewClass extends cc.Component {
     plantStartPos : cc.Vec2 = null
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {}
+    onLoad () {
+        cc.director.getCollisionManager().enabled = true
+    }
 
     start () {
         this.node.on('touchstart', this.onTouchStart, this)

@@ -24,7 +24,7 @@ export default class NewClass extends cc.Component {
     d0_1Pool : cc.NodePool = null
     onLoad () {
         this.d0_1Pool = new cc.NodePool()
-        for (let i = 0; i < 28; ++i) {
+        for (let i = 0; i < 150; ++i) {
             let bullet = cc.instantiate(this.bulletPrefab[0]); // 创建节点
             this.d0_1Pool.put(bullet); // 通过 put 接口放入对象池
         }
@@ -47,10 +47,16 @@ export default class NewClass extends cc.Component {
             }
             d0_1Node.parent = this.node
             //这里的坐标我调整了一下， + 30  - 50
-            d0_1Node.setPosition(startPosX + i * 50 + 30, resPos.y - 50)
-            d0_1Node.runAction(cc.sequence(cc.moveTo(0.3, cc.v2(d0_1Node.x, 1000)), cc.callFunc(function(target, node) {
-                this.d0_1Pool.put(node)
-            }, this, d0_1Node)))
+            let posX : number = startPosX + i * 50 + 30
+            d0_1Node.setPosition(resPos.x + 15, resPos.y - 50)
+            //d0_1Node.runAction(cc.moveTo(0.3, cc.v2(d0_1Node.x, 1000)))
+            let bullet = d0_1Node.getComponent('Bullet')
+            if(!bullet) {
+                cc.error('FireSystem.ts, 获取的组件为空')
+            }
+            else {
+                bullet.run(posX, this.d0_1Pool)
+            }
         }
 
     }
